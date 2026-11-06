@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>神马影院-高清电影在线观看_神马影视热门剧集推荐</title>
+<meta name="description" content="神马影院提供高清电影、热门剧集与经典影视在线观看入口，按类型与热度组织片单，帮助访客快速找到想看的影片并了解播放与收藏方式。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101526'/%3E%3Cpath d='M18 20h28v6H18zm0 11h28v6H18zm0 11h18v6H18z' fill='%23f5b942'/%3E%3Ccircle cx='47' cy='45' r='7' fill='%23ff5c5c'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0c0f1a;
+    --panel:#141a2b;
+    --panel-2:#1b2236;
+    --line:rgba(255,255,255,.08);
+    --text:#e8ecf5;
+    --muted:#9aa4bb;
+    --gold:#f5b942;
+    --red:#ff5c5c;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:
+      radial-gradient(900px 420px at 82% -10%,rgba(245,185,66,.16),transparent 70%),
+      radial-gradient(700px 380px at 8% 0%,rgba(255,92,92,.12),transparent 70%),
+      var(--bg);
+    color:var(--text);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,"Segoe UI",sans-serif;
+    line-height:1.75;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+
+  /* 页头 */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(12,15,26,.86);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{display:flex;align-items:center;gap:18px;height:66px}
+  .logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+  .logo-mark{width:38px;height:38px;flex-shrink:0}
+  .logo-text{font-size:19px;font-weight:800;letter-spacing:.5px}
+  .logo-text em{font-style:normal;color:var(--gold)}
+  nav.main{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+  nav.main a{
+    padding:7px 13px;border-radius:999px;font-size:14px;color:var(--muted);
+    transition:.2s;
+  }
+  nav.main a:hover,nav.main a:focus-visible{color:var(--text);background:var(--panel-2)}
+  nav.main a.cta{color:#1a1206;background:var(--gold);font-weight:700}
+  nav.main a.cta:hover{background:#ffc85e;color:#1a1206}
+
+  /* 首屏 */
+  .hero{padding:56px 0 44px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;color:var(--gold);letter-spacing:1px;
+    border:1px solid rgba(245,185,66,.35);border-radius:999px;padding:5px 14px;
+    margin-bottom:20px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
+  h1{font-size:clamp(30px,4.6vw,46px);line-height:1.25;font-weight:900;letter-spacing:1px}
+  h1 span{color:var(--gold)}
+  .hero p.lead{margin-top:16px;color:var(--muted);font-size:16px;max-width:34em}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 22px;border-radius:999px;font-size:15px;font-weight:700;
+    border:1px solid transparent;cursor:pointer;transition:.2s;
+  }
+  .btn-primary{background:var(--gold);color:#1a1206}
+  .btn-primary:hover{background:#ffc85e}
+  .btn-ghost{background:transparent;color:var(--text);border-color:rgba(255,255,255,.22)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+  .btn[aria-disabled="true"]{cursor:default;opacity:.85}
+  .hero-stats{display:flex;gap:28px;margin-top:32px;flex-wrap:wrap}
+  .hero-stats div{font-size:13px;color:var(--muted)}
+  .hero-stats strong{display:block;font-size:22px;color:var(--text);font-weight:800}
+
+  .poster-card{
+    background:linear-gradient(160deg,var(--panel-2),var(--panel));
+    border:1px solid var(--line);border-radius:22px;
+    padding:22px;box-shadow:0 30px 60px -30px rgba(0,0,0,.8);
+  }
+  .poster-card .screen{
+    border-radius:14px;overflow:hidden;background:#080b14;
+    border:1px solid var(--line);
+  }
+  .poster-card h2{font-size:15px;margin:16px 0 6px;font-weight:700}
+  .poster-card p{font-size:13px;color:var(--muted)}
+  .tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .tag{font-size:12px;padding:4px 10px;border-radius:999px;background:rgba(245,185,66,.12);color:var(--gold);border:1px solid rgba(245,185,66,.25)}
+
+  /* 通用分区 */
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:26px;flex-wrap:wrap}
+  .sec-head h2{font-size:clamp(21px,2.6vw,26px);font-weight:800;letter-spacing:.5px}
+  .sec-head h2 small{display:block;font-size:13px;color:var(--muted);font-weight:400;letter-spacing:0;margin-top:4px}
+  .sec-head .more{font-size:14px;color:var(--gold)}
+  .sec-head .more:hover{text-decoration:underline}
+
+  /* 片单卡片 */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;transition:.25s;
+  }
+  .card:hover{transform:translateY(-3px);border-color:rgba(245,185,66,.35)}
+  .card .thumb{border-radius:10px;overflow:hidden;background:#0a0e18;margin-bottom:14px}
+  .card h3{font-size:16px;font-weight:700;margin-bottom:6px}
+  .card .meta{font-size:12px;color:var(--muted);margin-bottom:8px}
+  .card p{font-size:14px;color:var(--muted)}
+
+  /* 类型筛选 */
+  .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+  .chip{
+    font-size:14px;padding:7px 16px;border-radius:999px;cursor:pointer;
+    background:var(--panel);border:1px solid var(--line);color:var(--muted);
+    transition:.2s;font-family:inherit;
+  }
+  .chip:hover{color:var(--text)}
+  .chip[aria-pressed="true"]{background:var(--gold);color:#1a1206;border-color:var(--gold);font-weight:700}
+  .rows{display:grid;gap:12px}
+  .row{
+    display:grid;grid-template-columns:44px 1fr auto;gap:16px;align-items:center;
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px;
+  }
+  .row .no{font-size:15px;font-weight:800;color:var(--gold)}
+  .row .t{font-size:15px;font-weight:600}
+  .row .t span{display:block;font-size:12.5px;color:var(--muted);font-weight:400}
+  .row .rt{font-size:12.5px;color:var(--muted);white-space:nowrap}
+  .empty{color:var(--muted);font-size:14px;padding:16px 4px;display:none}
+
+  /* 阅读区块 */
+  .two-col{display:grid;grid-template-columns:1.3fr .7fr;gap:34px}
+  .prose p{color:#c6cddd;font-size:15.5px;margin-bottom:14px}
+  .prose h3{font-size:17px;margin:22px 0 8px;font-weight:700;color:var(--text)}
+  .prose h3:first-child{margin-top:0}
+  .aside-card{
+    background:linear-gradient(170deg,var(--panel-2),var(--panel));
+    border:1px solid var(--line);border-radius:var(--radius);padding:22px;
+  }
+  .aside-card h3{font-size:16px;margin-bottom:14px}
+  .steps{list-style:none;display:grid;gap:12px}
+  .steps li{display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:14px;color:var(--muted)}
+  .steps b{
+    width:26px;height:26px;border-radius:50%;display:grid;place-items:center;
+    background:rgba(245,185,66,.15);color:var(--gold);font-size:13px;
+  }
+
+  /* 关于 */
+  .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .about-grid .card p{font-size:14px}
+
+  /* 页尾 */
+  footer{padding:38px 0 46px;font-size:13.5px;color:var(--muted)}
+  .foot-top{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;padding-bottom:22px;border-bottom:1px solid var(--line)}
+  .foot-brand{display:flex;align-items:center;gap:10px}
+  .foot-brand .logo-mark{width:32px;height:32px}
+  .foot-brand strong{font-size:16px;color:var(--text);letter-spacing:.5px}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap}
+  .foot-links a:hover{color:var(--gold)}
+  .foot-note{padding-top:18px;line-height:1.9}
+
+  @media(max-width:900px){
+    .hero-grid,.two-col{grid-template-columns:1fr}
+    .cards,.about-grid{grid-template-columns:repeat(2,1fr)}
+    nav.main a{padding:6px 10px;font-size:13px}
+    .logo-text{font-size:17px}
+  }
+  @media(max-width:640px){
+    .bar{height:auto;padding:12px 0;flex-wrap:wrap;gap:10px}
+    nav.main{margin-left:0;width:100%}
+    nav.main a{flex:1 1 auto;text-align:center;background:var(--panel);font-size:13px}
+    .hero{padding:36px 0 32px}
+    .cards,.about-grid{grid-template-columns:1fr}
+    .row{grid-template-columns:34px 1fr;gap:10px}
+    .row .rt{grid-column:2;text-align:left}
+    section{padding:38px 0}
+    .hero-stats{gap:20px}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="神马影院首页">
+      <svg class="logo-mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1b2236"/>
+        <path d="M14 18h36v7H14zm0 11h36v7H14zm0 11h22v7H14z" fill="#f5b942"/>
+        <circle cx="47" cy="45" r="8" fill="#ff5c5c"/>
+        <path d="M44.6 41.4v7.2l6-3.6z" fill="#0c0f1a"/>
+      </svg>
+      <span class="logo-text">神马<em>影院</em></span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#top">首页</a>
+      <a href="#picks">热门片单</a>
+      <a href="#ranking">排行</a>
+      <a href="#guide">使用说明</a>
+      <a href="#about">关于本站</a>
+      <a class="cta" href="#picks">开始观影</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">高清影视 · 在线观看入口</span>
+        <h1>神马影院</h1>
+        <p class="lead">神马影院整理电影、剧集与经典影视片单，按类型、热度与口碑分区呈现。访客可以先看简介与标签，再决定从哪一部开始，减少在片库中反复翻找的时间。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#picks">浏览热门片单</a>
+          <a class="btn btn-ghost" href="#guide">了解观看流程</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>3</strong>主要片单分区</div>
+          <div><strong>6</strong>影视类型标签</div>
+          <div><strong>每日</strong>片单更新维护</div>
+        </div>
+      </div>
+      <div class="poster-card">
+        <div class="screen">
+          <svg viewBox="0 0 400 220" role="img" aria-label="影院银幕示意图">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#1f2942"/><stop offset="1" stop-color="#0c0f1a"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="220" fill="url(#g1)"/>
+            <rect x="40" y="30" width="320" height="140" rx="8" fill="#0a0e18" stroke="#2a3450"/>
+            <path d="M182 78l52 32-52 32z" fill="#f5b942"/>
+            <rect x="40" y="182" width="320" height="8" rx="4" fill="#2a3450"/>
+            <circle cx="330" cy="52" r="5" fill="#ff5c5c"/>
+            <circle cx="312" cy="52" r="5" fill="#f5b942"/>
+            <circle cx="294" cy="52" r="5" fill="#5c8bff"/>
+          </svg>
+        </div>
+        <h2>本周片单主题：光影夜场</h2>
+        <p>精选剧情、动作与纪录片三类影片，标注时长与适看场景，方便按当晚的空闲时间挑选。</p>
+        <div class="tag-row">
+          <span class="tag">剧情</span>
+          <span class="tag">动作</span>
+          <span class="tag">纪录片</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 热门片单 -->
+  <section id="picks">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>热门片单<small>神马影院编辑按题材与观看场景分组，每组给出选片理由</small></h2>
+        <a class="more" href="#ranking">查看完整排行 →</a>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="thumb">
+            <svg viewBox="0 0 320 160" role="img" aria-label="剧情片封面示意图">
+              <rect width="320" height="160" fill="#1a2136"/>
+              <circle cx="90" cy="70" r="34" fill="#2c3a5c"/>
+              <path d="M0 160c60-50 130-50 200-10s90 10 120 10z" fill="#243050"/>
+              <rect x="220" y="34" width="64" height="8" rx="4" fill="#f5b942"/>
+              <rect x="220" y="52" width="44" height="8" rx="4" fill="#3c4a6e"/>
+            </svg>
+          </div>
+          <h3>静水流深 · 剧情精选</h3>
+          <div class="meta">剧情 / 约 2 小时 / 适合夜晚独看</div>
+          <p>以人物关系为核心的影片合集，节奏偏缓，适合想安静看完一段故事的观众。每部附一句看点提示。</p>
+        </article>
+        <article class="card">
+          <div class="thumb">
+            <svg viewBox="0 0 320 160" role="img" aria-label="动作片封面示意图">
+              <rect width="320" height="160" fill="#241a1a"/>
+              <path d="M40 130l50-70 40 44 40-58 70 84z" fill="#4a2b2b"/>
+              <circle cx="252" cy="46" r="20" fill="#ff5c5c" opacity=".85"/>
+              <rect x="40" y="140" width="240" height="6" rx="3" fill="#5c3636"/>
+            </svg>
+          </div>
+          <h3>疾风追击 · 动作片单</h3>
+          <div class="meta">动作 / 约 1.5 小时 / 适合多人同看</div>
+          <p>强调场面调度与追逐节奏的影片组合，剧情门槛较低，适合朋友聚会时作为背景放映。</p>
+        </article>
+        <article class="card">
+          <div class="thumb">
+            <svg viewBox="0 0 320 160" role="img" aria-label="纪录片封面示意图">
+              <rect width="320" height="160" fill="#14231f"/>
+              <circle cx="160" cy="80" r="46" fill="none" stroke="#3f7a63" stroke-width="3"/>
+              <path d="M160 34v92M114 80h92" stroke="#3f7a63" stroke-width="3"/>
+              <rect x="30" y="130" width="260" height="6" rx="3" fill="#2a4a3c"/>
+            </svg>
+          </div>
+          <h3>万物纪事 · 纪录片合集</h3>
+          <div class="meta">纪录片 / 单集约 50 分钟 / 适合碎片时间</div>
+          <p>自然、人文与城市观察三类纪录片的集合，单集篇幅短，可在通勤或午休时段分段观看。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 排行 + 筛选 -->
+  <section id="ranking">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>片单排行<small>按类型筛选，排行依据站内浏览热度与简介完整度</small></h2>
+      </div>
+      <div class="filters" role="group" aria-label="按类型筛选片单">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">全部</button>
+        <button class="chip" type="button" data-filter="剧情" aria-pressed="false">剧情</button>
+        <button class="chip" type="button" data-filter="动作" aria-pressed="false">动作</button>
+        <button class="chip" type="button" data-filter="喜剧" aria-pressed="false">喜剧</button>
+        <button class="chip" type="button" data-filter="悬疑" aria-pressed="false">悬疑</button>
+        <button class="chip" type="button" data-filter="纪录片" aria-pressed="false">纪录片</button>
+        <button class="chip" type="button" data-filter="动画" aria-pressed="false">动画</button>
+      </div>
+      <div class="rows" id="rankRows">
+        <div class="row" data-type="剧情"><span class="no">01</span><span class="t">静水流深<span>剧情 · 人物关系驱动 · 片单 12 部</span></span><span class="rt">站内热度前列</span></div>
+        <div class="row" data-type="动作"><span class="no">02</span><span class="t">疾风追击<span>动作 · 追逐场面 · 片单 9 部</span></span><span class="rt">周末多人同看</span></div>
+        <div class="row" data-type="纪录片"><span class="no">03</span><span class="t">万物纪事<span>纪录片 · 单集短篇 · 片单 15 集</span></span><span class="rt">碎片时间友好</span></div>
+        <div class="row" data-type="喜剧"><span class="no">04</span><span class="t">笑场时刻<span>喜剧 · 轻松节奏 · 片单 10 部</span></span><span class="rt">下饭观看推荐</span></div>
+        <div class="row" data-type="悬疑"><span class="no">05</span><span class="t">迷雾线索<span>悬疑 · 推理结构 · 片单 8 部</span></span><span class="rt">需专注观看</span></div>
+        <div class="row" data-type="动画"><span class="no">06</span><span class="t">纸上星海<span>动画 · 手绘风格 · 片单 11 部</span></span><span class="rt">亲子共看可选</span></div>
+        <div class="row" data-type="剧情"><span class="no">07</span><span class="t">长街旧事<span>剧情 · 城市生活 · 片单 7 部</span></span><span class="rt">慢节奏叙事</span></div>
+        <div class="row" data-type="悬疑"><span class="no">08</span><span class="t">夜半来电<span>悬疑 · 单线叙事 · 片单 6 部</span></span><span class="rt">短篇优先</span></div>
+      </div>
+      <p class="empty" id="rankEmpty">该类型下暂无片单，可切换其他标签查看。</p>
+    </div>
+  </section>
+
+  <!-- 使用说明 -->
+  <section id="guide">
+    <div class="wrap two-col">
+      <div class="prose">
+        <h3>神马影院适合什么样的观看需求</h3>
+        <p>许多访客进入神马影院时并没有明确的片名，只是想找一部当晚能看完的影片。因此本站把片单按"时长、题材、观看场景"三个维度拆分：先看卡片上的时长与场景提示，再决定是否点进详情，避免在长列表中反复比较。</p>
+        <p>如果你已经锁定类型，可以直接使用排行区的筛选按钮。点击"悬疑"或"纪录片"等标签后，列表会即时缩小范围，页面不会跳转，方便来回对照。筛选逻辑完全在本地运行，不需要额外加载。</p>
+        <h3>片单信息如何组织</h3>
+        <p>每张片单卡片包含标题、类型、大致时长、适看场景与一句看点提示。热度排序反映的是站内浏览与简介完整度，并不等同于专业评分，访客可以把它当作初筛参考，而非最终结论。</p>
+        <p>对于纪录片这类单集篇幅较短的内容，神马影院会在标签中标注"碎片时间"，提示可以分段观看；动作与喜剧片单则更多标注"多人同看"，便于聚会场景选择。</p>
+        <h3>收藏与回访</h3>
+        <p>遇到想晚点再看的片单，可以记录排行编号，下次回到神马影院时按编号或类型快速定位。目前站内不提供账号体系，收藏动作以浏览器书签为主，这一点在页面中如实说明，不做额外承诺。</p>
+      </div>
+      <aside class="aside-card">
+        <h3>从进入到开始观看</h3>
+        <ol class="steps">
+          <li><b>1</b><span>在首屏浏览本周片单主题，确认大致方向。</span></li>
+          <li><b>2</b><span>进入排行区，用类型标签缩小范围。</span></li>
+          <li><b>3</b><span>阅读卡片的时长与场景提示，挑选一部。</span></li>
+          <li><b>4</b><span>记下排行编号，方便下次回访时定位。</span></li>
+        </ol>
+        <a class="btn btn-primary" href="#picks" style="margin-top:18px;width:100%;justify-content:center">回到片单</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>关于神马影院<small>页面定位、内容边界与维护方式</small></h2>
+      </div>
+      <div class="about-grid">
+        <div class="card">
+          <h3>页面定位</h3>
+          <p>神马影院是一份面向访客的影视片单首页，重心在"先选片、再观看"的决策路径，而非堆叠海量条目。内容以简介、标签与场景提示为主。</p>
+        </div>
+        <div class="card">
+          <h3>内容边界</h3>
+          <p>片单仅提供题材、时长与适看场景等描述性信息，不涉及具体播放源与版权归属说明；如遇内容调整，以页面当期展示为准。</p>
+        </div>
+        <div class="card">
+          <h3>维护方式</h3>
+          <p>片单按周整理，排行随站内浏览情况变化。类型标签保持固定六类，新增片单会归入已有分类，避免分类膨胀影响筛选体验。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <svg class="logo-mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#1b2236"/>
+          <path d="M14 18h36v7H14zm0 11h36v7H14zm0 11h22v7H14z" fill="#f5b942"/>
+          <circle cx="47" cy="45" r="8" fill="#ff5c5c"/>
+          <path d="M44.6 41.4v7.2l6-3.6z" fill="#0c0f1a"/>
+        </svg>
+        <strong>神马影院</strong>
+      </div>
+      <div class="foot-links">
+        <a href="#picks">热门片单</a>
+        <a href="#ranking">片单排行</a>
+        <a href="#guide">使用说明</a>
+        <a href="#about">关于本站</a>
+      </div>
+    </div>
+    <p class="foot-note">
+      神马影院以片单形式呈现电影、剧集与纪录片信息，帮助访客按题材、时长与观看场景快速选片。页面内容为描述性整理，排行反映站内浏览情况，供参考使用。
+    </p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var chips = document.querySelectorAll('.chip');
+    var rows = document.querySelectorAll('#rankRows .row');
+    var empty = document.getElementById('rankEmpty');
+    chips.forEach(function(chip){
+      chip.addEventListener('click', function(){
+        chips.forEach(function(c){ c.setAttribute('aria-pressed','false'); });
+        chip.setAttribute('aria-pressed','true');
+        var f = chip.getAttribute('data-filter');
+        var shown = 0;
+        rows.forEach(function(row){
+          var ok = (f === 'all' || row.getAttribute('data-type') === f);
+          row.style.display = ok ? '' : 'none';
+          if(ok) shown++;
+        });
+        empty.style.display = shown ? 'none' : 'block';
+      });
+    });
+  })();
+</script>
+</body>
+</html>
