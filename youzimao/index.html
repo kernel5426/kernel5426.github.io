@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>柚子猫-柚子猫萌宠日常_柚子猫品种特征与养护分享</title>
+<meta name="description" content="柚子猫主题首页，汇集柚子猫的萌宠日常、品种特征、毛色辨识、性格表现与日常养护要点，帮助你快速了解柚子猫这一可爱的猫咪形象与相关萌宠内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f6c453'/%3E%3Cpath d='M18 22l6 8h16l6-8 2 14c0 10-8 16-16 16s-16-6-16-16z' fill='%23fff8e7'/%3E%3Ccircle cx='25' cy='34' r='2.6' fill='%23332'/%3E%3Ccircle cx='39' cy='34' r='2.6' fill='%23332'/%3E%3Cpath d='M30 40h4l-2 3z' fill='%23e07a5f'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#2f2a26;
+  --ink-soft:#5c534b;
+  --cream:#fffaf1;
+  --paper:#fffdf8;
+  --amber:#f6c453;
+  --amber-deep:#e0a32c;
+  --leaf:#6f8f5a;
+  --clay:#e07a5f;
+  --line:#efe4d4;
+  --shadow:0 10px 30px rgba(120,95,55,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,250,241,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.18rem;letter-spacing:.02em}
+.brand .logo-mark{width:38px;height:38px;flex:none}
+.nav-links{display:flex;gap:22px;font-size:.94rem;color:var(--ink-soft);font-weight:500}
+.nav-links a{padding:4px 0;border-bottom:2px solid transparent;transition:.2s}
+.nav-links a:hover{color:var(--ink);border-bottom-color:var(--amber)}
+.nav-cta{
+  background:var(--ink);color:var(--cream);padding:8px 18px;border-radius:999px;
+  font-size:.9rem;font-weight:600;transition:.2s;white-space:nowrap;
+}
+.nav-cta:hover{background:var(--amber-deep);color:#fff}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:1rem;color:var(--ink)}
+
+/* hero */
+.hero{
+  position:relative;
+  padding:64px 0 72px;
+  background:
+    radial-gradient(circle at 85% 18%, rgba(246,196,83,.28), transparent 45%),
+    radial-gradient(circle at 8% 80%, rgba(111,143,90,.16), transparent 42%),
+    var(--cream);
+  overflow:hidden;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.82rem;font-weight:700;letter-spacing:.12em;
+  color:var(--amber-deep);text-transform:uppercase;
+  background:rgba(246,196,83,.18);padding:6px 14px;border-radius:999px;
+  margin-bottom:20px;
+}
+h1{
+  font-size:clamp(2.3rem,5.2vw,3.5rem);
+  line-height:1.15;letter-spacing:.01em;font-weight:900;
+  margin-bottom:18px;
+}
+h1 .dot{color:var(--amber-deep)}
+.hero-lead{font-size:1.08rem;color:var(--ink-soft);max-width:34em;margin-bottom:26px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--ink);color:var(--cream);
+  padding:13px 26px;border-radius:999px;font-weight:700;font-size:.98rem;
+  transition:.2s;box-shadow:var(--shadow);
+}
+.btn-primary:hover{background:var(--amber-deep);color:#fff;transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1.5px solid var(--line);background:var(--paper);
+  padding:12px 24px;border-radius:999px;font-weight:600;font-size:.96rem;
+  color:var(--ink-soft);transition:.2s;
+}
+.btn-ghost:hover{border-color:var(--amber);color:var(--ink)}
+.hero-art{position:relative}
+.hero-art svg{width:100%;height:auto;filter:drop-shadow(0 18px 30px rgba(120,95,55,.14))}
+.hero-stats{
+  display:flex;gap:34px;margin-top:38px;flex-wrap:wrap;
+}
+.stat b{display:block;font-size:1.55rem;font-weight:900;color:var(--ink);line-height:1.2}
+.stat span{font-size:.85rem;color:var(--ink-soft)}
+
+/* section base */
+section{padding:66px 0}
+.sec-head{max-width:640px;margin-bottom:38px}
+.sec-tag{font-size:.8rem;font-weight:800;letter-spacing:.14em;color:var(--leaf);margin-bottom:10px;display:block}
+h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:900;line-height:1.3;margin-bottom:12px}
+.sec-desc{color:var(--ink-soft);font-size:1rem}
+
+/* traits cards */
+.traits{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  background:var(--cream);border:1px solid var(--line);border-radius:20px;
+  padding:26px 24px;transition:.25s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(246,196,83,.6)}
+.card-icon{
+  width:48px;height:48px;border-radius:14px;display:grid;place-items:center;
+  background:rgba(246,196,83,.22);margin-bottom:16px;
+}
+.card h3{font-size:1.12rem;font-weight:800;margin-bottom:8px}
+.card p{font-size:.93rem;color:var(--ink-soft)}
+
+/* daily list */
+.daily-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.item-list{display:flex;flex-direction:column;gap:20px}
+.item{
+  display:flex;gap:16px;padding-bottom:20px;border-bottom:1px dashed var(--line);
+}
+.item:last-child{border-bottom:none;padding-bottom:0}
+.item-num{
+  flex:none;width:36px;height:36px;border-radius:50%;
+  display:grid;place-items:center;font-weight:800;font-size:.9rem;
+  background:var(--amber);color:#4a3a12;
+}
+.item h3{font-size:1.02rem;font-weight:800;margin-bottom:4px}
+.item p{font-size:.92rem;color:var(--ink-soft)}
+.daily-visual{
+  background:var(--paper);border:1px solid var(--line);border-radius:24px;
+  padding:28px;box-shadow:var(--shadow);
+}
+.daily-visual svg{width:100%;height:auto;margin-bottom:18px}
+.daily-note{font-size:.9rem;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:14px}
+
+/* care table-ish */
+.care{background:var(--ink);color:#f4ede2;border-radius:0}
+.care .sec-tag{color:var(--amber)}
+.care h2{color:#fff}
+.care .sec-desc{color:#c9bfb1}
+.care-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+.care-box{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;padding:22px 20px;
+}
+.care-box h3{font-size:1rem;font-weight:800;color:var(--amber);margin-bottom:8px}
+.care-box p{font-size:.88rem;color:#d4cabb}
+
+/* gallery strip */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.strip figure{
+  background:var(--paper);border:1px solid var(--line);border-radius:18px;
+  padding:18px;display:flex;flex-direction:column;gap:10px;
+}
+.strip svg{width:100%;height:auto}
+.strip figcaption{font-size:.85rem;color:var(--ink-soft);text-align:center}
+
+/* faq */
+.faq-list{display:flex;flex-direction:column;gap:14px;max-width:800px}
+details{
+  background:var(--paper);border:1px solid var(--line);border-radius:14px;
+  padding:16px 20px;
+}
+details[open]{border-color:rgba(246,196,83,.7);box-shadow:var(--shadow)}
+summary{
+  cursor:pointer;font-weight:700;font-size:1rem;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.3rem;color:var(--amber-deep);font-weight:400;transition:.2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:12px;font-size:.93rem;color:var(--ink-soft)}
+
+/* download */
+.download-band{
+  background:linear-gradient(135deg,#fbe9bf,#f6d78f);
+  border-radius:24px;padding:44px 40px;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;
+}
+.download-band h2{font-size:1.55rem;margin-bottom:8px}
+.download-band p{color:#6b5a30;font-size:.95rem;max-width:38em}
+.btn-download{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--ink);color:#fff;padding:14px 30px;border-radius:999px;
+  font-weight:700;font-size:1rem;pointer-events:none;opacity:.92;
+}
+
+/* footer */
+footer.site{
+  background:#241f1a;color:#b9ad9d;padding:46px 0 30px;margin-top:0;
+}
+.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;margin-bottom:30px}
+.foot-brand{max-width:320px}
+.foot-brand .brand{color:#fff;font-size:1.1rem;margin-bottom:10px}
+.foot-brand p{font-size:.86rem;line-height:1.7}
+.foot-links{display:flex;gap:54px;flex-wrap:wrap}
+.foot-col h4{font-size:.82rem;letter-spacing:.1em;color:#8c8173;margin-bottom:12px;font-weight:700}
+.foot-col a{display:block;font-size:.88rem;margin-bottom:8px;transition:.2s}
+.foot-col a:hover{color:var(--amber)}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding-top:20px;
+  font-size:.8rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;color:#7d7365;
+}
+
+/* responsive */
+@media(max-width:920px){
+  .hero-grid,.daily-grid{grid-template-columns:1fr;gap:34px}
+  .card-grid{grid-template-columns:1fr 1fr}
+  .care-grid{grid-template-columns:1fr 1fr}
+  .strip{grid-template-columns:1fr 1fr}
+  .hero-art{order:-1;max-width:340px;margin:0 auto}
+}
+@media(max-width:680px){
+  .nav-links{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;background:var(--paper);padding:16px 6vw;
+    border-bottom:1px solid var(--line);gap:14px;box-shadow:var(--shadow);
+  }
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+  .nav-cta{display:none}
+  .card-grid,.care-grid,.strip{grid-template-columns:1fr}
+  section{padding:48px 0}
+  .hero{padding:40px 0 52px}
+  .hero-stats{gap:24px;margin-top:28px}
+  .download-band{padding:30px 22px}
+  .foot-links{gap:30px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="柚子猫 首页">
+      <svg class="logo-mark" viewBox="0 0 64 64" role="img" aria-label="柚子猫标志">
+        <circle cx="32" cy="32" r="30" fill="#f6c453"/>
+        <path d="M18 21l6 9h16l6-9 2 15c0 10-8 16-16 16s-16-6-16-16z" fill="#fff8e7"/>
+        <circle cx="25" cy="34" r="2.7" fill="#332d28"/>
+        <circle cx="39" cy="34" r="2.7" fill="#332d28"/>
+        <path d="M30 40.5h4l-2 3z" fill="#e07a5f"/>
+        <path d="M14 30l-5-2M50 30l5-2" stroke="#fff8e7" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>柚子猫</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="主导航">
+      <a href="#traits">品种特征</a>
+      <a href="#daily">萌宠日常</a>
+      <a href="#care">养护要点</a>
+      <a href="#gallery">形象图集</a>
+      <a href="#faq">常见问答</a>
+    </nav>
+    <a href="#traits" class="nav-cta">认识柚子猫</a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">☰ 菜单</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">萌宠日常 · 主题首页</span>
+        <h1>柚子猫</h1>
+        <p class="hero-lead">
+          柚子猫，是围绕一只毛色温暖、性格亲人的猫咪展开的萌宠主题形象。这里把柚子猫的外形特征、日常状态、养护要点与形象图集集中呈现，方便你一次读懂柚子猫的整体样貌，也方便喜欢柚子猫的访客按需查找内容。
+        </p>
+        <div class="hero-actions">
+          <a href="#traits" class="btn-primary">从特征开始了解 →</a>
+          <a href="#daily" class="btn-ghost">看看柚子猫日常</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>3</b><span>外形辨识维度</span></div>
+          <div class="stat"><b>4</b><span>日常养护要点</span></div>
+          <div class="stat"><b>5</b><span>常见问答入口</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="210" cy="342" rx="150" ry="22" fill="#ecdcc0"/>
+          <circle cx="210" cy="180" r="128" fill="#f6c453"/>
+          <path d="M112 118l30 44h136l30-44 8 68c0 46-40 78-106 78S94 232 94 186z" fill="#fff8e7"/>
+          <path d="M112 118l30 44-46-8zM308 118l-30 44 46-8z" fill="#f6c453"/>
+          <ellipse cx="166" cy="192" rx="12" ry="16" fill="#332d28"/>
+          <ellipse cx="254" cy="192" rx="12" ry="16" fill="#332d28"/>
+          <circle cx="170" cy="187" r="4" fill="#fff"/>
+          <circle cx="258" cy="187" r="4" fill="#fff"/>
+          <path d="M200 216h20l-10 12z" fill="#e07a5f"/>
+          <path d="M210 228v10M210 238c-8 8-20 6-24-2M210 238c8 8 20 6 24-2" stroke="#5c534b" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M150 232l-40-6M150 242l-42 8M270 232l40-6M270 242l42 8" stroke="#c9a24b" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="108" cy="88" r="8" fill="#6f8f5a"/>
+          <circle cx="318" cy="104" r="6" fill="#e07a5f"/>
+          <circle cx="300" cy="64" r="4" fill="#f6c453"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAITS -->
+  <section class="traits" id="traits">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag">外形与性格</span>
+        <h2>柚子猫的三重辨识</h2>
+        <p class="sec-desc">提到柚子猫，最先被记住的往往是那一身介于金黄色与浅橘色之间的毛色，以及安静又黏人的性情。以下三个维度，是认识柚子猫最直接的入口。</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#a9781c" stroke-width="2"/><path d="M8 12h8" stroke="#a9781c" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>毛色辨识</h3>
+          <p>柚子猫的毛色偏暖，像剥开的柚子果肉，浅橘与奶白自然过渡。毛色分布通常集中在头部与背部，腹部偏浅，形成明显的层次感。</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#6f8f5a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>体态与轮廓</h3>
+          <p>柚子猫体型匀称，四肢比例协调，脸部轮廓圆润而不臃肿。站立时背部线条平缓，坐下时前胸放松，是辨识柚子猫整体气质的重要参考。</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.4-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.6-7 9-7 9z" stroke="#e07a5f" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>性格表现</h3>
+          <p>柚子猫性格温和，对熟悉的人亲近，遇到陌生环境会先观察再靠近。日常里它喜欢待在光线柔和的位置，活动节奏平稳，很少有突然的躁动。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAILY -->
+  <section id="daily">
+    <div class="wrap daily-grid">
+      <div>
+        <div class="sec-head">
+          <span class="sec-tag">一天的状态</span>
+          <h2>柚子猫的日常节奏</h2>
+          <p class="sec-desc">柚子猫的一天并不复杂，却很有规律。从清晨到夜晚，它的状态变化平稳，这也让柚子猫成为容易相处的陪伴对象。</p>
+        </div>
+        <div class="item-list">
+          <div class="item">
+            <span class="item-num">01</span>
+            <div>
+              <h3>清晨巡视</h3>
+              <p>天亮后柚子猫会先在家中走动一圈，确认各个角落的声音与气味，再回到固定的位置等待喂食。</p>
+            </div>
+          </div>
+          <div class="item">
+            <span class="item-num">02</span>
+            <div>
+              <h3>上午小憩</h3>
+              <p>用完早餐后，柚子猫通常会找一个有阳光的窗边休息，这段时间它对打扰的容忍度较低，适合安静相处。</p>
+            </div>
+          </div>
+          <div class="item">
+            <span class="item-num">03</span>
+            <div>
+              <h3>午后互动</h3>
+              <p>下午是柚子猫相对活跃的时段，它愿意参与逗猫棒或纸盒追逐这类轻量互动，持续时间不长但专注度高。</p>
+            </div>
+          </div>
+          <div class="item">
+            <span class="item-num">04</span>
+            <div>
+              <h3>夜晚安顿</h3>
+              <p>入夜后柚子猫会自行回到休息区，情绪趋于平静。若环境光线稳定，它的睡眠也更连贯。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="daily-visual">
+        <svg viewBox="0 0 320 240" aria-hidden="true">
+          <rect x="0" y="0" width="320" height="240" rx="16" fill="#fffaf1"/>
+          <circle cx="252" cy="56" r="26" fill="#f6c453" opacity=".7"/>
+          <rect x="30" y="150" width="260" height="14" rx="7" fill="#ecdcc0"/>
+          <path d="M96 150c0-34 22-58 52-58s52 24 52 58z" fill="#f6c453"/>
+          <path d="M118 106l14 20h36l14-20 4 26c0 20-18 34-36 34s-36-14-36-34z" fill="#fff8e7"/>
+          <circle cx="140" cy="122" r="3.4" fill="#332d28"/>
+          <circle cx="160" cy="122" r="3.4" fill="#332d28"/>
+          <path d="M147 132h6l-3 4z" fill="#e07a5f"/>
+          <path d="M60 96l18 6M60 108l18-2" stroke="#6f8f5a" stroke-width="3" stroke-linecap="round"/>
+          <path d="M232 118c14 0 22 10 22 22" stroke="#c9a24b" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+        <p class="daily-note">柚子猫的节奏偏慢，互动时顺着它自己的步调，往往比频繁打扰更容易建立信任。</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- CARE -->
+  <section class="care" id="care">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag">养护要点</span>
+        <h2>照顾柚子猫的四个方向</h2>
+        <p class="sec-desc">柚子猫的养护并不需要复杂设备，关键在于把日常细节做稳。以下四点覆盖了饮食、清洁、环境与陪伴，是按顺序展开的实用路径。</p>
+      </div>
+      <div class="care-grid">
+        <div class="care-box">
+          <h3>饮食规律</h3>
+          <p>固定喂食时间与份量，避免频繁更换主食。柚子猫进食偏慢，分段投喂更容易保持稳定。</p>
+        </div>
+        <div class="care-box">
+          <h3>毛发清洁</h3>
+          <p>定期梳理浮毛，尤其是换季阶段。梳理时顺着毛发生长方向，减少打结与毛球堆积。</p>
+        </div>
+        <div class="care-box">
+          <h3>环境布置</h3>
+          <p>为柚子猫准备安静、避风的休息角，猫砂盆与食盆保持距离，减少气味干扰。</p>
+        </div>
+        <div class="care-box">
+          <h3>日常陪伴</h3>
+          <p>每天安排固定互动时段，用短时高频的方式回应柚子猫的靠近，建立稳定的安全感。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag">形象图集</span>
+        <h2>柚子猫的四种样子</h2>
+        <p class="sec-desc">柚子猫在不同状态下的轮廓与毛色变化，构成了它最容易被认出的视觉标签。以下四组形象，分别对应休息、好奇、进食与伸展。</p>
+      </div>
+      <div class="strip">
+        <figure>
+          <svg viewBox="0 0 160 120" aria-hidden="true">
+            <rect width="160" height="120" rx="12" fill="#fff6e4"/>
+            <ellipse cx="80" cy="92" rx="52" ry="10" fill="#ecdcc0"/>
+            <ellipse cx="80" cy="74" rx="42" ry="24" fill="#f6c453"/>
+            <path d="M56 60l8 12h32l8-12 3 16c0 12-12 18-27 18s-27-6-27-18z" fill="#fff8e7"/>
+            <circle cx="70" cy="72" r="2.4" fill="#332d28"/>
+            <circle cx="90" cy="72" r="2.4" fill="#332d28"/>
+          </svg>
+          <figcaption>柚子猫 · 安静休息</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 160 120" aria-hidden="true">
+            <rect width="160" height="120" rx="12" fill="#f2f6ee"/>
+            <ellipse cx="80" cy="92" rx="50" ry="10" fill="#dfe8d6"/>
+            <path d="M52 52l10 16h36l10-16 4 22c0 16-14 26-32 26s-32-10-32-26z" fill="#f6c453"/>
+            <circle cx="68" cy="70" r="3" fill="#332d28"/>
+            <circle cx="92" cy="70" r="3" fill="#332d28"/>
+            <path d="M76 80h8l-4 5z" fill="#e07a5f"/>
+            <circle cx="80" cy="42" r="5" fill="#6f8f5a"/>
+          </svg>
+          <figcaption>柚子猫 · 抬头好奇</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 160 120" aria-hidden="true">
+            <rect width="160" height="120" rx="12" fill="#fdf0e8"/>
+            <ellipse cx="80" cy="96" rx="54" ry="9" fill="#f0dccc"/>
+            <ellipse cx="80" cy="68" rx="40" ry="22" fill="#f6c453"/>
+            <path d="M58 56l8 12h28l8-12 3 14c0 12-10 18-25 18s-25-6-25-18z" fill="#fff8e7"/>
+            <circle cx="70" cy="66" r="2.4" fill="#332d28"/>
+            <circle cx="90" cy="66" r="2.4" fill="#332d28"/>
+            <circle cx="80" cy="98" r="7" fill="#e07a5f" opacity=".55"/>
+          </svg>
+          <figcaption>柚子猫 · 低头进食</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 160 120" aria-hidden="true">
+            <rect width="160" height="120" rx="12" fill="#eef3f6"/>
+            <ellipse cx="80" cy="98" rx="48" ry="8" fill="#dbe4ea"/>
+            <path d="M38 84c0-16 18-26 42-26s42 10 42 26z" fill="#f6c453"/>
+            <path d="M60 62l6 12h28l6-12 3 12c0 10-10 16-23 16s-23-6-23-16z" fill="#fff8e7"/>
+            <circle cx="72" cy="70" r="2.2" fill="#332d28"/>
+            <circle cx="88" cy="70" r="2.2" fill="#332d28"/>
+            <path d="M118 58c10-6 16-2 18 6" stroke="#c9a24b" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+          <figcaption>柚子猫 · 伸展身体</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag">常见问答</span>
+        <h2>关于柚子猫，访客常问什么</h2>
+        <p class="sec-desc">这些问题覆盖了柚子猫的毛色、性格、互动方式与内容范围，回答基于页面已呈现的信息，方便你核对与继续查找。</p>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>柚子猫的毛色为什么叫“柚子”？</summary>
+          <p>柚子猫的毛色偏暖，浅橘与奶白相间，观感接近剥开的柚子果肉，因此得名。这一称呼强调的是毛色的整体暖调，而不是某一处具体色块。</p>
+        </details>
+        <details>
+          <summary>柚子猫适合新手家庭吗？</summary>
+          <p>从本页描述的节奏看，柚子猫性格温和、活动平稳，日常养护集中在饮食、梳理与环境布置上，对新手而言门槛不高，但仍需固定作息与耐心观察。</p>
+        </details>
+        <details>
+          <summary>柚子猫一天需要多少互动时间？</summary>
+          <p>页面给出的节奏是午后有一段相对活跃的时段。按短时高频的方式安排互动，比一次长时间逗玩更贴合柚子猫的状态。</p>
+        </details>
+        <details>
+          <summary>柚页图集里的形象是同一只猫吗？</summary>
+          <p>图集展示的是柚子猫在休息、好奇、进食与伸展四种状态下的形象，重点在于呈现毛色与轮廓的变化，而非记录某一只具体个体的连续影像。</p>
+        </details>
+        <details>
+          <summary>这个页面之后还会补充哪些内容？</summary>
+          <p>后续可围绕柚子猫的换季毛发变化、互动玩具选择与休息区布置继续展开。当前页面的四个养护方向已经给出可执行的起点。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="download-band">
+        <div>
+          <h2>柚子猫形象素材</h2>
+          <p>包含页面中的柚子猫主题插画与形象图集，供个人了解与收藏使用。素材仍在整理中，下载入口将在内容确认后开放。</p>
+        </div>
+        <a class="btn-download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" fill="#f6c453"/>
+            <path d="M18 21l6 9h16l6-9 2 15c0 10-8 16-16 16s-16-6-16-16z" fill="#fff8e7"/>
+            <circle cx="25" cy="34" r="2.7" fill="#332d28"/>
+            <circle cx="39" cy="34" r="2.7" fill="#332d28"/>
+          </svg>
+          <span>柚子猫</span>
+        </div>
+        <p>柚子猫主题首页，围绕外形特征、萌宠日常、养护要点与形象图集展开，为喜欢柚子猫的访客提供清晰的内容入口。</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>内容</h4>
+          <a href="#traits">品种特征</a>
+          <a href="#daily">萌宠日常</a>
+          <a href="#care">养护要点</a>
+        </div>
+        <div class="foot-col">
+          <h4>浏览</h4>
+          <a href="#gallery">形象图集</a>
+          <a href="#faq">常见问答</a>
+          <a href="#top">回到顶部</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 柚子猫 · 萌宠主题首页</span>
+      <span>页面内容以柚子猫的日常观察与养护经验为基础整理</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+  });
+</script>
+</body>
+  </html>
